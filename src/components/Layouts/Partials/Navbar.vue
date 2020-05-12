@@ -17,8 +17,16 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="index.html">home</a></li>
-                                            <li><a href="jobs.html">Browse Job</a></li>
+                                            <li class="nav-item">
+                                               <router-link :to="{ name: 'Home' }">
+                                                    <a href="#" class="nav-link">Home</a>
+                                               </router-link>
+                                            </li>
+                                            <li class="nav-item">
+                                               <router-link :to="{ name: 'Browsejob' }">
+                                                    <a href="#" class="nav-link">Browsw Job</a>
+                                               </router-link>
+                                            </li>
                                             <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="candidate.html">Candidates </a></li>
@@ -32,21 +40,57 @@
                                                     <li><a href="single-blog.html">single-blog</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li class="nav-item">
+                                               <router-link :to="{ name: 'Contact' }">
+                                                    <a href="#" class="nav-link">Contact</a>
+                                               </router-link>
+                                            </li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
+                            
                             <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                                <div class="Appointment">
+                                
+                                <!-- <div class="Appointment">
                                     <div class="phone_num d-none d-xl-block">
                                         <a href="#">Log in</a>
                                     </div>
                                     <div class="d-none d-lg-block">
                                         <a class="boxed-btn3" href="#">Post a Job</a>
                                     </div>
-                                </div>
+                                </div> -->
+                                
+                                <div class="Appointment">
+                                    <div class="main-menu  d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">
+                                                 <li><a href="#">log in <i class="ti-angle-down"></i></a>
+                                                                <ul class="submenu">
+                                                                    <li class="nav-item">
+                                                                      <router-link :to="{ name: 'Loginpage' }">
+                                                                         <a href="#" class="nav-link">Job seeker</a>
+                                                                       </router-link>
+                                                                    </li>
+                                                                    <li class="nav-item">
+                                                                      <router-link :to="{ name: 'Loginpage2' }">
+                                                                         <a href="#" class="nav-link">Employer</a>
+                                                                       </router-link>
+                                                                    </li>
+                                                                </ul>
+                                                  </li>   
+                                            </ul>
+                                        </nav>   
+                                    </div> 
+
+                                    <div class="d-none d-lg-block">
+                                        <a class="boxed-btn3" href="#">Post a Job</a>
+                                    </div>
+                                </div>    
+                                
+                                
                             </div>
+                          
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
                             </div>

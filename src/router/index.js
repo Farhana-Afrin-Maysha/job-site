@@ -3,9 +3,10 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Browsejob from "../views/Browsejob.vue";
 import Pages from "../views/Pages.vue";
-import Blog from "../views/Blog.vue";
-
-
+import Contact  from "../views/Contact.vue";
+import Loginpage from "../views/Loginpage.vue";
+import Loginpage2 from "../views/Loginpage2.vue";
+import Registrationpage2 from "../views/Registrationpage2.vue";
 Vue.use(VueRouter)
 
   const routes = [
@@ -31,14 +32,28 @@ Vue.use(VueRouter)
     path: '/pages',
     name: 'Pages',
     component: Pages
-  },{
-    path: '/blog',
-    name: 'Blog',
-    component: Blog
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
+  },
+  {
+    path: '/login',
+    name: 'Loginpage',
+    component: Loginpage
+  },
+  {
+    path: '/loginemployer',
+    name: 'Loginpage2',
+    component: Loginpage2
+  },
+  {
+    path: '/registrationemployer',
+    name: 'Registrationpage2',
+    component: Registrationpage2
   },
 
-  
-  
 ]
 
 const router = new VueRouter({
