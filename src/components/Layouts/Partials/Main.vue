@@ -8,18 +8,28 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="serch_cat d-flex justify-content-end">
-                                        <select>
+                                        <select style="display: none;">
                                             <option data-display="Most Recent">Most Recent</option>
                                             <option value="1">Marketer</option>
                                             <option value="2">Wordpress </option>
                                             <option value="4">Designer</option>
                                         </select>
+                                        <div class="nice-select" tabindex="0">
+                                            <span class="current">Most Recent</span>
+                                            <ul class="list">
+                                                <li data-value="Most Recent" data-display="Most Recent" class="option selected focus">Most Recent</li>
+                                                <li data-value="1" class="option">Marketer</li>
+                                                <li data-value="2" class="option">Wordpress </li>
+                                                <li data-value="4" class="option">Designer</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                                        
+                 
                     <div class="job_lists m-0">
                         <div class="row">
                             <div class="col-lg-12 col-md-12">

@@ -2,12 +2,13 @@
 <html class="no-js" lang="zxx">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Job Board</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="https://colorlib.com/preview/theme/jobboard2/img/favicon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -21,6 +22,7 @@
     <link rel="stylesheet" href="https://colorlib.com/preview/theme/jobboard2/css/nice-select.css">
     <link rel="stylesheet" href="https://colorlib.com/preview/theme/jobboard2/css/flaticon.css">
     <link rel="stylesheet" href="https://colorlib.com/preview/theme/jobboard2/css/gijgo.css">
+    <link rel="stylesheet" href="https://colorlib.com/preview/theme/jobboard2/css/jquery-ui.css">
     <link rel="stylesheet" href="https://colorlib.com/preview/theme/jobboard2/css/animate.min.css">
     <link rel="stylesheet" href="https://colorlib.com/preview/theme/jobboard2/css/slicknav.css">
 
@@ -34,11 +36,14 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
+    <!------ Include the above in your HEAD tag ---------->  
+    
 </head>
   <body>
+    <div id="app"></div>
      <!-- link that opens popup -->
     <!-- JS here -->
+    
     <script src="https://colorlib.com/preview/theme/jobboard2/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="https://colorlib.com/preview/theme/jobboard2/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="https://colorlib.com/preview/theme/jobboard2/js/popper.min.js"></script>
@@ -58,7 +63,7 @@
     <script src="https://colorlib.com/preview/theme/jobboard2/js/plugins.js"></script>
     <script src="https://colorlib.com/preview/theme/jobboard2/js/gijgo.min.js"></script>
 
-
+    <script src="https://colorlib.com/preview/theme/jobboard2/js/range.js" type="672a2143a508a3cd43c8a9a8-text/javascript"></script>
 
     <!--contact js-->
     <script src="https://colorlib.com/preview/theme/jobboard2/js/contact.js"></script>
@@ -70,7 +75,36 @@
 
     <script src="https://colorlib.com/preview/theme/jobboard2/js/main.js"></script>
     
-    <div id="app"></div>
+    
     <!-- built files will be auto injected -->
+    <script type="672a2143a508a3cd43c8a9a8-text/javascript">
+      $( function() {
+          $( "#slider-range" ).slider({
+              range: true,
+              min: 0,
+              max: 24600,
+              values: [ 750, 24600 ],
+              slide: function( event, ui ) {
+                  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] +"/ Year" );
+              }
+          });
+          $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+              " - $" + $( "#slider-range" ).slider( "values", 1 ) + "/ Year");
+      } );
+    </script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="672a2143a508a3cd43c8a9a8-text/javascript"></script>
+    <script type="672a2143a508a3cd43c8a9a8-text/javascript">
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     tag('js', new Date());
+
+      gtag('config', 'UA-23581568-13');
+    </script>
+    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="672a2143a508a3cd43c8a9a8-|49" defer="">
+    </script>
+
+
   </body>
+
 </html>

@@ -11,54 +11,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-xl-3 col-md-6">
-                    <div class="single_catagory">
-                        <a href="jobs.html"><h4>Design & Creative</h4></a>
-                        <p> <span>50</span> Available position</p>
+                <div class="col-lg-4 col-xl-3 col-md-6" v-for="designation in designations" :key="designation.id">
+                    <div class="single_catagory" >
+                        <a href="jobs.html"><h4>{{designation.job}}</h4></a>
+                        <p> <span>{{designation.vacancy}}</span> Available position</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-xl-3 col-md-6">
-                    <div class="single_catagory">
-                        <a href="jobs.html"><h4>Marketing</h4></a>
-                        <p> <span>50</span> Available position</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-3 col-md-6">
-                    <div class="single_catagory">
-                        <a href="jobs.html"><h4>Telemarketing</h4></a>
-                        <p> <span>50</span> Available position</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-3 col-md-6">
-                    <div class="single_catagory">
-                        <a href="jobs.html"><h4>Software & Web</h4></a>
-                        <p> <span>50</span> Available position</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-3 col-md-6">
-                    <div class="single_catagory">
-                        <a href="jobs.html"><h4>Administration</h4></a>
-                        <p> <span>50</span> Available position</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-3 col-md-6">
-                    <div class="single_catagory">
-                        <a href="jobs.html"><h4>Teaching & Education</h4></a>
-                        <p> <span>50</span> Available position</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-3 col-md-6">
-                    <div class="single_catagory">
-                        <a href="jobs.html"><h4>Engineering</h4></a>
-                        <p> <span>50</span> Available position</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-3 col-md-6">
-                    <div class="single_catagory">
-                        <a href="jobs.html"><h4>Garments / Textile</h4></a>
-                        <p> <span>50</span> Available position</p>
-                    </div>
-                </div>
+               
             </div>
         </div>
     </div>
@@ -66,7 +25,23 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-    name: 'Popular'
+    name: 'Popular',
+    data () {
+    return {
+      designations: []
+     }
+    },
+    
+    created() {
+            axios.get('http://127.0.0.1:8000/designations/')
+                .then(response => {
+                    this.designations = response.data
+                    console.log(response)
+                })
+
+            
+        }
 }
 </script>
