@@ -7,6 +7,7 @@ import Contact  from "../views/Contact.vue";
 import Loginpage from "../views/Loginpage.vue";
 import Loginpage2 from "../views/Loginpage2.vue";
 import Registrationpage2 from "../views/Registrationpage2.vue";
+import Jobdetail from "../views/Jobdetail.vue";
 Vue.use(VueRouter)
 
   const routes = [
@@ -53,7 +54,11 @@ Vue.use(VueRouter)
     name: 'Registrationpage2',
     component: Registrationpage2
   },
-
+  {
+    path: '/jobdetail/:jobid',
+    name: 'Jobdetail',
+    component: Jobdetail
+  },
 ]
 
 const router = new VueRouter({

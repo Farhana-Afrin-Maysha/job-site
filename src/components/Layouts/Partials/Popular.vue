@@ -13,8 +13,8 @@
             <div class="row">
                 <div class="col-lg-4 col-xl-3 col-md-6" v-for="designation in designations" :key="designation.id">
                     <div class="single_catagory" >
-                        <a href="jobs.html"><h4>{{designation.job}}</h4></a>
-                        <p> <span>{{designation.vacancy}}</span> Available position</p>
+                        <a href="jobs.html"><h4>{{designation.name}}</h4></a>
+                        <p> <span>{{designation.job_count}}</span> Available position</p>
                     </div>
                 </div>
                
@@ -35,9 +35,9 @@ export default {
     },
     
     created() {
-            axios.get('http://127.0.0.1:8000/designations/')
+            axios.get('http://galib04.pythonanywhere.com/api/category/')
                 .then(response => {
-                    this.designations = response.data
+                    this.designations = response.data.data
                     console.log(response)
                 })
 

@@ -25,6 +25,26 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- <select v-model="gender">
+                              <option disabled value="">Gender</option>
+                                <option>M</option>
+                                <option>F</option>
+                                <option>O</option>
+                              </select>
+                            <span>Selected: {{ gender }}</span>
+                            <select v-model="job_level">
+                              <option disabled value="">Job level</option>
+                                <option>ENT</option>
+                                <option>MID</option>
+                                <option>EXP</option>
+                              </select>
+                            <span>Selected: {{ job_level }}</span>
+                            <select v-model="job_status">
+                              <option disabled value="">Job status</option>
+                                <option>FT</option>
+                                <option>PT</option>
+                                <option>CT</option>
+                              </select> -->
                             </div>
                         </div>
                     </div>
@@ -32,20 +52,22 @@
                  
                     <div class="job_lists m-0">
                         <div class="row">
-                            <div class="col-lg-12 col-md-12">
+                            <div class="col-lg-12 col-md-12" v-for="info in filterinfo" :key="info.id">
                                 <div class="single_jobs white-bg d-flex justify-content-between">
                                     <div class="jobs_left d-flex align-items-center">
                                         <div class="thumb">
                                             <img src="https://colorlib.com/preview/theme/jobboard2/img/svg_icon/1.svg" alt="">
                                         </div>
                                         <div class="jobs_conetent">
-                                            <a href="job_details.html"><h4>Software Engineer</h4></a>
+                                            <!-- <a href="job_details.html"><h4>{{ option.job_title}}</h4></a> -->
+                                            <!-- <a  href="http://galib04.pythonanywhere.com/api/job/1/"><h4>{{ option.job_title}}</h4></a> -->
+                                            <router-link :to="{ name: 'Jobdetail', params: { jobid:info.id}}"><h3>{{ info.job_title}}</h3></router-link>
                                             <div class="links_locat d-flex align-items-center">
                                                 <div class="location">
-                                                    <p> <i class="fa fa-map-marker"></i> California, USA</p>
+                                                    <p> <i class="fa fa-map-marker"></i>{{ info.job_location}}</p>
                                                 </div>
                                                 <div class="location">
-                                                    <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                                                    <p> <i class="fa fa-clock-o"></i>{{ info.job_level}}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -56,177 +78,58 @@
                                             <a href="job_details.html" class="boxed-btn3">Apply Now</a>
                                         </div>
                                         <div class="date">
-                                            <p>Date line: 31 Jan 2020</p>
+                                            <p>{{ info.application_deadline}}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="single_jobs white-bg d-flex justify-content-between">
-                                    <div class="jobs_left d-flex align-items-center">
-                                        <div class="thumb">
-                                            <img src="https://colorlib.com/preview/theme/jobboard2/img/svg_icon/2.svg" alt="">
-                                        </div>
-                                        <div class="jobs_conetent">
-                                            <a href="job_details.html"><h4>Digital Marketer</h4></a>
-                                            <div class="links_locat d-flex align-items-center">
-                                                <div class="location">
-                                                    <p> <i class="fa fa-map-marker"></i> California, USA</p>
-                                                </div>
-                                                <div class="location">
-                                                    <p> <i class="fa fa-clock-o"></i> Part-time</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="jobs_right">
-                                        <div class="apply_now">
-                                            <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
-                                            <a href="job_details.html" class="boxed-btn3">Apply Now</a>
-                                        </div>
-                                        <div class="date">
-                                            <p>Date line: 31 Jan 2020</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="single_jobs white-bg d-flex justify-content-between">
-                                    <div class="jobs_left d-flex align-items-center">
-                                        <div class="thumb">
-                                            <img src="https://colorlib.com/preview/theme/jobboard2/img/svg_icon/3.svg" alt="">
-                                        </div>
-                                        <div class="jobs_conetent">
-                                            <a href="job_details.html"><h4>Wordpress Developer</h4></a>
-                                            <div class="links_locat d-flex align-items-center">
-                                                <div class="location">
-                                                    <p> <i class="fa fa-map-marker"></i> California, USA</p>
-                                                </div>
-                                                <div class="location">
-                                                    <p> <i class="fa fa-clock-o"></i> Part-time</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="jobs_right">
-                                        <div class="apply_now">
-                                            <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
-                                            <a href="job_details.html" class="boxed-btn3">Apply Now</a>
-                                        </div>
-                                        <div class="date">
-                                            <p>Date line: 31 Jan 2020</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="single_jobs white-bg d-flex justify-content-between">
-                                    <div class="jobs_left d-flex align-items-center">
-                                        <div class="thumb">
-                                            <img src="https://colorlib.com/preview/theme/jobboard2/img/svg_icon/4.svg" alt="">
-                                        </div>
-                                        <div class="jobs_conetent">
-                                            <a href="job_details.html"><h4>Visual Designer</h4></a>
-                                            
-                                            <div class="links_locat d-flex align-items-center">
-                                                <div class="location">
-                                                    <p> <i class="fa fa-map-marker"></i> California, USA</p>
-                                                </div>
-                                                <div class="location">
-                                                    <p> <i class="fa fa-clock-o"></i> Part-time</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="jobs_right">
-                                        <div class="apply_now">
-                                            <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
-                                            <a href="job_details.html" class="boxed-btn3">Apply Now</a>
-                                        </div>
-                                        <div class="date">
-                                            <p>Date line: 31 Jan 2020</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="single_jobs white-bg d-flex justify-content-between">
-                                    <div class="jobs_left d-flex align-items-center">
-                                        <div class="thumb">
-                                            <img src="https://colorlib.com/preview/theme/jobboard2/img/svg_icon/5.svg" alt="">
-                                        </div>
-                                        <div class="jobs_conetent">
-                                            <a href="job_details.html"><h4>Software Engineer</h4></a>
-                                            <div class="links_locat d-flex align-items-center">
-                                                <div class="location">
-                                                    <p> <i class="fa fa-map-marker"></i> California, USA</p>
-                                                </div>
-                                                <div class="location">
-                                                    <p> <i class="fa fa-clock-o"></i> Part-time</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="jobs_right">
-                                        <div class="apply_now">
-                                            <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
-                                            <a href="job_details.html" class="boxed-btn3">Apply Now</a>
-                                        </div>
-                                        <div class="date">
-                                            <p>Date line: 31 Jan 2020</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="single_jobs white-bg d-flex justify-content-between">
-                                    <div class="jobs_left d-flex align-items-center">
-                                        <div class="thumb">
-                                            <img src="https://colorlib.com/preview/theme/jobboard2/img/svg_icon/1.svg" alt="">
-                                        </div>
-                                        <div class="jobs_conetent">
-                                            <a href="job_details.html"><h4>Creative Designer</h4></a>
-                                            <div class="links_locat d-flex align-items-center">
-                                                <div class="location">
-                                                    <p> <i class="fa fa-map-marker"></i> California, USA</p>
-                                                </div>
-                                                <div class="location">
-                                                    <p> <i class="fa fa-clock-o"></i> Part-time</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="jobs_right">
-                                        <div class="apply_now">
-                                            <a class="heart_mark" href="#"> <i class="fa fa-heart"></i> </a>
-                                            <a href="job_details.html" class="boxed-btn3">Apply Now</a>
-                                        </div>
-                                        <div class="date">
-                                            <p>Date line: 31 Jan 2020</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="pagination_wrap">
-                                    <ul>
-                                        <li><a href="#"> <i class="ti-angle-left"></i> </a></li>
-                                        <li><a href="#"><span>01</span></a></li>
-                                        <li><a href="#"><span>02</span></a></li>
-                                        <li><a href="#"> <i class="ti-angle-right"></i> </a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            
+                        </div>                   
+                     </div>
                 </div>
     
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-    name: 'Main'
+    name: 'Main',
+    
+     data () {
+    return {
+      info: [],
+   
+     }
+    },
+    
+    created() {
+            axios.get('http://galib04.pythonanywhere.com/api/job/')
+                .then(response => {
+                    this.info = response.data.data
+                    console.log(response)
+                    console.log(this.$route.query.job_level)
+                })
+            
+            
+            
+        },
+    computed:{
+      filterinfo: function(){
+        return this.info
+        .filter((info)=>{
+         
+          return info.gender.match(this.$route.query.gender) ;
+        })
+        .filter((info)=>{
+                return info.job_level.match(this.$route.query.job_level);
+            })
+        
+        .filter((info)=>{
+                return info.employment_status.match(this.$route.query.job_status);
+            })    
+            ;
+      }
+    },
+
 }
 </script>
